@@ -1,0 +1,19 @@
+{
+  "name": "Minecraft-NFT-Explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node node_modules/gh-pages/bin/gh-pages.js -d src/",
+    "gh-pages-clean": "node node_modules/gh-pages/bin/gh-pages-clean",
+	"http-server": "node_modules/.bin/http-server ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "gh-pages": "^3.1.0"
+  }
+}
