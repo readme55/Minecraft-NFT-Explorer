@@ -40372,7 +40372,7 @@ function renderSchematic(canvas, schematic, options) {
   var arrowGeometry = new three_1.CylinderGeometry(cameraOffset / 4, cameraOffset / 4, cameraOffset / 200, 3, 1, false);
   var arrowMesh = new three_1.Mesh(arrowGeometry, arrowMaterial);
   arrowMesh.position.z = cameraOffset - 0.5;
-  scene.add(arrowMesh);
+  //scene.add(arrowMesh); // remove scene arrow for dashcraft
   var worldLight = new three_1.DirectionalLight(0xffffff, 1);
   worldLight.position.x = cameraOffset;
   worldLight.position.z = cameraOffset;
@@ -40380,7 +40380,7 @@ function renderSchematic(canvas, schematic, options) {
   scene.add(worldLight);
   scene.add(new three_1.AmbientLight(new three_1.Color(), 0.5));
   var gridGeom = new three_1.CylinderGeometry(cameraOffset / 400, cameraOffset / 400, 1, 3, 1, false);
-  var gridMaterial = new three_1.MeshBasicMaterial({
+  var gridMaterial = new three_1.MeshBasicMaterial({  // grid made invisible for dashcraft
     color: new three_1.Color(0x000000),
     opacity: 0.0,
     transparent: true
