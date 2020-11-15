@@ -1,8 +1,10 @@
 var start = 1;
 var search = "";
 var mode = 0;
-let nextBtn = document.getElementById('nextBtn');
+// let nextBtn = document.getElementById('nextBtn');
+// let prevBtn = document.getElementById('prevBtn');
 //let searchText = document.getElementById('searchText');
+let itemRange = document.getElementById('itemRange');
 
 // mode 0 nextPage, mode 1 searchUser
 const loadSchematics = async function (startSchem, modeInput, searchUser) {
@@ -57,10 +59,13 @@ const loadSchematics = async function (startSchem, modeInput, searchUser) {
                 // console.log(document.getElementById('div1').innerHTML)
                 document.getElementById(strDiv).innerHTML = documents[i].data.schematic;
                 document.getElementById(titleDiv).innerHTML = documents[i].data.title;
-                document.getElementById(dateDiv).innerHTML = documents[i].data.date.substring(0,10);
+                document.getElementById(dateDiv).innerHTML = documents[i].data.date.substring(0, 10);
                 document.getElementById(nameDiv).innerHTML = documents[i].data.username;
 
             }
+
+            var end = Number(startSchem) + 9;
+            itemRange.innerHTML = "Showing " + startSchem + " - " + end.toString();
 
             // console.log(documents);
             // console.log(documents[0].data.username)
@@ -81,8 +86,8 @@ const loadSchematics = async function (startSchem, modeInput, searchUser) {
 }
 
 const resetInputs = async function () {
-	for (let i = 0; i < 10; i++) {
-        
+    for (let i = 0; i < 10; i++) {
+
         let titleDiv = 'title' + i;
         let dateDiv = 'date' + i;
         let nameDiv = "name" + i;
@@ -101,6 +106,29 @@ const resetInputs = async function () {
         // ctx.clearStencil(0)
     }
 }
+
+prevBtn.addEventListener('click', async function () {
+    console.log("Click Prev")
+
+    if (start > 1) {
+        prevBtn.disabled = true;
+        start = start - 10;
+
+        // reset inputs
+        await resetInputs();
+
+        await loadSchematics(start, mode, search);     // load schematics from Dash Platform and "prepare"
+
+        window.scrollTo(0, 0);
+        window.dispatchEvent(new Event('load'));    // send window.load event to render.js to draw schematics to canvas
+
+        prevBtn.disabled = false;
+    }
+    // location.reload();   // reload window
+
+    console.log("done")
+}, false);
+
 
 
 nextBtn.addEventListener('click', async function () {
@@ -144,16 +172,16 @@ searchBtn.addEventListener('click', async function () {
 
 linkExplorer.addEventListener('click', async function () {
     console.log("Click Explorer")
-	searchText.value = "";
-	
-	// reset inputs
+    searchText.value = "";
+
+    // reset inputs
     await resetInputs();
-	
-	await loadSchematics(1, 0, "");
-	window.scrollTo(0, 0);
+
+    await loadSchematics(1, 0, "");
+    window.scrollTo(0, 0);
     window.dispatchEvent(new Event('load'));    // send window.load event to render.js to draw schematics to canvas
-	console.log("done")
-	
+    console.log("done")
+
 }, false);
 
 // auto executing method when this js file is loaded from index.html
