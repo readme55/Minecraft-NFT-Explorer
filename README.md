@@ -1,9 +1,9 @@
-# Minecraft-NFT-Explorer
+# Minecraft NFT-Explorer
 Minecraft Explorer for Schematics - created and stored with Dashcraft Plugin on the Dash Platform Blockchain
 
-<img src="https://raw.githubusercontent.com/readme55/minecraft-explorer/main/meta.png" width="500" style="text-align:center;"/>
+<img src="https://raw.githubusercontent.com/readme55/minecraft-explorer/main/meta.png" width="500"/>
 
-Deployed to http://readme.dashdevs.org/minecraft-explorer
+Deployed: http://readme.dashdevs.org/minecraft-explorer
 
 ## Description
 
