@@ -1,9 +1,14 @@
 # Minecraft-NFT-Explorer
 Minecraft Explorer for Schematics - created and stored with Dashcraft Plugin on the Dash Platform Blockchain
 
-<img src="https://raw.githubusercontent.com/readme55/minecraft-explorer/main/meta.png" width="300" />
+<img src="https://raw.githubusercontent.com/readme55/minecraft-explorer/main/meta.png" width="500" style="text-align:center;"/>
 
 Deployed to http://readme.dashdevs.org/minecraft-explorer
+
+## Description
+
+Minecraft Schematics Explorer for Non-Fungible-Tokens saved on the Blockchain using Dash Platform
+
 
 ### TODO
 - convert html variable storage to javascript
