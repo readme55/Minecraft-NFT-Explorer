@@ -59,8 +59,7 @@ const loadSchematics = async function (startSchem, modeInput, searchUser) {
                 // console.log(document.getElementById('div1').innerHTML)
                 document.getElementById(strDiv).innerHTML = documents[i].data.schematic;
                 document.getElementById(titleDiv).innerHTML = documents[i].data.title;
-                // document.getElementById(dateDiv).innerHTML = documents[i].data.date.substring(0, 10);
-                document.getElementById(dateDiv).innerHTML = documents[i].data.date;
+                document.getElementById(dateDiv).innerHTML = documents[i].data.date.substring(0, 10);
                 document.getElementById(nameDiv).innerHTML = documents[i].data.username;
 
             }
