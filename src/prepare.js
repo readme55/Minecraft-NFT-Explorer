@@ -17,7 +17,7 @@ const loadSchematics = async function (startSchem, modeInput, searchUser) {
         // },
         apps: {
             myContract: {
-                contractId: 'Faggf8rA3GuoEoSo8ACaqtY72iok6DY5D77dr2B7vFw1'
+                contractId: '75LFKcpnX6mnz1ToWTnKrtZqTdYWyExUfixPmc4DvR6a'
             }
         }
     };
