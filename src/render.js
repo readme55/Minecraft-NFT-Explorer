@@ -10092,7 +10092,7 @@ WebGLRenderTargetCube.prototype.fromEquirectangularTexture = function (renderer,
   material.uniforms.tEquirect.value = texture;
   var mesh = new Mesh(new BoxBufferGeometry(5, 5, 5), material);
   scene.add(mesh);
-  var camera = new CubeCamera(1, 10, 1);
+  var camera = new CubeCamera(1, 10, 1);	// camera, marker dashcraft
   camera.renderTarget = this;
   camera.renderTarget.texture.name = 'CubeCameraTexture';
   camera.update(renderer, scene);
@@ -13612,7 +13612,7 @@ function WebGLRenderLists() {
  * @author mrdoob / http://mrdoob.com/
  */
 
-
+// marker dashcraft, check different light settings
 function UniformsCache() {
   var lights = {};
   return {
@@ -40373,7 +40373,7 @@ function renderSchematic(canvas, schematic, options) {
   var arrowMesh = new three_1.Mesh(arrowGeometry, arrowMaterial);
   arrowMesh.position.z = cameraOffset - 0.5;
   //scene.add(arrowMesh); // remove scene arrow for dashcraft
-  var worldLight = new three_1.DirectionalLight(0xffffff, 1);
+  var worldLight = new three_1.DirectionalLight(0xffffff, 1);	// affects color of the light visible on the plane (not background) white smoke: f5f5f5, original ffffff
   worldLight.position.x = cameraOffset;
   worldLight.position.z = cameraOffset;
   worldLight.position.y = cameraOffset;
@@ -40381,8 +40381,8 @@ function renderSchematic(canvas, schematic, options) {
   scene.add(new three_1.AmbientLight(new three_1.Color(), 0.5));
   var gridGeom = new three_1.CylinderGeometry(cameraOffset / 400, cameraOffset / 400, 1, 3, 1, false);
   var gridMaterial = new three_1.MeshBasicMaterial({  // grid made invisible for dashcraft
-    color: new three_1.Color(0x000000),
-    opacity: 0.0,
+    color: new three_1.Color(0x000000),	// grid color
+    opacity: 0.0,						// opacity set to zero to hide
     transparent: true
   }); // generate a 3d grid
 
@@ -40422,8 +40422,8 @@ function renderSchematic(canvas, schematic, options) {
     antialias: true,
     canvas: canvas
   });
-  renderer.setClearColor(new three_1.Color(0xffffff));
-  renderer.setSize(options.size, options.size);
+  renderer.setClearColor(new three_1.Color(0xF8F8FF));	// set background canvas color for dashcraft (original ffffff) GhostWhite: F8F8FF looks good
+  renderer.setSize(options.size, options.size);		// set canvas size
   canvas.addEventListener('mousedown', mousedownCallback);
   document.body.addEventListener('mousemove', mousemoveCallback);
   document.body.addEventListener('mouseup', mouseupCallback);
