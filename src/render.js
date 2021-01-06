@@ -40551,7 +40551,8 @@ window.addEventListener('load', async function () {
       schem,
       {
         size: 500,
-        texturePrefix: 'https://worldedit.golf/static'
+        // texturePrefix: 'https://worldedit.golf/static'
+		texturePrefix: 'http://185.141.27.111/static'
       });
     }
   }
