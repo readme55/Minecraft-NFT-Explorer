@@ -40227,6 +40227,7 @@ function basicBlockGen(material) {
   return sideBlockGen(material, material, material);
 }
 
+// use basicBlockGen to create new block textures with equal image on all six sides
 var blockNameMap = {
   acacia_door: basicBlockGen('acacia_door_top'),
   barrel: sideBlockGen('barrel_top', 'barrel_bottom', 'barrel_side'),
@@ -40258,7 +40259,8 @@ var blockNameMap = {
   smoker: basicBlockGen('smoker_front'),
   smooth_stone_slab: basicBlockGen('smooth_stone_slab_side'),
   stone_slab: basicBlockGen('stone_slab_side'),
-  tnt: sideBlockGen('tnt_top', 'tnt_bottom', 'tnt_side')
+  tnt: sideBlockGen('tnt_top', 'tnt_bottom', 'tnt_side'),
+  snow_block: basicBlockGen('snow')
 };
 
 function parseNbt(nbt) {
