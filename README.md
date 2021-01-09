@@ -10,7 +10,7 @@ Deployed: http://readme.dashdevs.org/minecraft-explorer
 Minecraft Schematics Explorer for Non-Fungible-Tokens saved on the Blockchain using Dash Platform
 
 
-### TODO
-- convert html variable storage to javascript
-- add feature to show non-full blocks as PR to https://github.com/EngineHub/SchematicWebViewer
-- add missing textures as PR to https://github.com/EngineHub/SchematicWebViewer or host own texture pack
+## Contribution
+
+Big thanks to the [Worldedit](https://enginehub.org/worldedit/) project and their [Schematics Web Viewer](https://github.com/EngineHub/SchematicWebViewer) library.
+Also [Faithful Resource Pack](https://faithful.team/faithful-1-15/) textures are used.
